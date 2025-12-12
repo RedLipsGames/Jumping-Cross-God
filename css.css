@@ -1,0 +1,99 @@
+/* Body y cabecera */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom, #1b2735, #090a0f);
+    color: white;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.4);
+}
+
+/* Contenedor del juego */
+#juego {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Fila */
+.fila {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Contador de muertes a la izquierda */
+.fila .muertes {
+    width: 40px;
+    text-align: right;
+    margin-right: 10px;
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Botones */
+button {
+    padding: 0;
+    width: 80px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    background: #3a3a3a;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* mantiene proporción */
+    pointer-events: none; /* clic pasa al botón, no a la imagen */
+}
+
+.fila .probabilidad {
+    margin-left: 10px; /* separa de los botones */
+    font-weight: bold;
+    font-size: 20px;
+    color: yellow;
+    white-space: nowrap;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255,255,255,0.6);
+}
+
+/* Botón de fila activa */
+.activa button {
+    background: #2e8b57; /* Verde bonito */
+}
+
+/* Botones de fila bloqueada */
+.bloqueada button {
+    background: #555;
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Botones de fila completada */
+.completada button {
+    background: #1e90ff; /* Azul */
+    opacity: 0.7;
+}
+
+/* Botón rojo cuando mueres */
+button:disabled[style*="red"] {
+    background-color: red !important;
+}
